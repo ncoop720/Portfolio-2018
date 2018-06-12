@@ -10,30 +10,30 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var board;
 var preset;
-var speed = 50;
+var speed = 300;
 var myInterval;
 var generation = 0;
 var isRunning = false;
 var height;
 var width;
 
-if ($(undefined).width() < 400) {
+if ($(window).width() < 400) {
   height = 15;
   width = 20;
-} else if ($(undefined).width() < 576 && $(undefined).width() >= 400) {
+} else if ($(window).width() < 576 && $(window).width() >= 400) {
   height = 20;
   width = 30;
-} else if ($(undefined).width() < 768 && $(undefined).width() >= 576) {
+} else if ($(window).width() < 768 && $(window).width() >= 576) {
   height = 25;
   width = 35;
-} else if ($(undefined).width() < 992 && $(undefined).width() >= 768) {
+} else if ($(window).width() < 992 && $(window).width() >= 768) {
   height = 30;
   width = 40;
-} else if ($(undefined).width() < 1200 && $(undefined).width() >= 992) {
-  height = 40;
+} else if ($(window).width() < 1200 && $(window).width() >= 992) {
+  height = 35;
   width = 50;
 } else {
-  height = 50;
+  height = 40;
   width = 60;
 }
 
@@ -55,13 +55,13 @@ $(document).ready(function () {
       height = 30;
       width = 40;
     } else if ($(this).width() < 1200 && $(this).width() >= 992) {
-      height = 40;
+      height = 35;
       width = 50;
     } else {
-      height = 50;
+      height = 40;
       width = 60;
     }
-    start();
+    selectPreset();
   });
 
   //add or remove cells on click
@@ -274,7 +274,7 @@ function selectPreset() {
   clearTimeout(myInterval);
   generation = 0;
   isRunning = false;
-  var selectBox = document.getElementById("selectBox");
+  var selectBox = document.getElementById("selectPreset");
   preset = selectBox.options[selectBox.selectedIndex].value;
 
   if (preset == 'None') {
@@ -294,6 +294,24 @@ function selectPreset() {
     generateTumbler();
   }
   generateBoard();
+}
+
+//for the dropdown menu of speeds
+function selectSpeed() {
+  var selectBox = document.getElementById("selectSpeed");
+  preset = selectBox.options[selectBox.selectedIndex].value;
+
+  if (preset == 'Slowest') {
+    rate(1000);
+  } else if (preset == "Slow") {
+    rate(650);
+  } else if (preset == "Normal") {
+    rate(300);
+  } else if (preset == "Fast") {
+    rate(150);
+  } else if (preset == "Fastest") {
+    rate(50);
+  }
 }
 
 //set all cells to dead

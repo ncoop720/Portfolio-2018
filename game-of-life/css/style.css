@@ -25,6 +25,24 @@ h2 {
   margin-bottom: 0px;
 }*/
 
+#selectors {
+  margin: 5px 0;
+}
+
+#controls {
+  margin: 5px 0;
+}
+
+.fa-redo, .fa-stop, .fa-play {
+  margin: 0 5px;
+  font-size: 20px;
+}
+
+.fa-redo:hover, .fa-stop:hover, .fa-play:hover {
+  cursor: pointer;
+  color: blue;
+}
+
 .dead {
   background: black;
 }
