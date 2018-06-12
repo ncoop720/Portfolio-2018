@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Game of Life</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div id="header">
+  <h1>Mathematician John Conway's Game of Life Simulation</h1>
+  <h2>The board is interactive. Click on a cell to kill off or birth a new cell.</h2>
+  <h2><a target="blank" href="https://www.youtube.com/watch?v=E8kUJL04ELA&t=61">(Click here for a video explanation of the Game of Life)</a></h2>
+</div>
+<div id='gameBoard'></div>
+<div class="footer" id="options">
+  <button onclick="runSimulation()">Run</button>
+  <button onclick="stopSimulation()">Stop</button>
+  <button onclick="clearSimulation()">Clear</button>
+  <div id="generation">Generation: 0</div>
+</div>
+<div class="footer" id="speed">
+  Speed: 
+  <button onclick="rate(300)" class="spdBtn">Slow</button>
+  <button onclick="rate(150)" class="spdBtn">Normal</button>
+  <button onclick="rate(50)" class="spdBtn active">Fast</button>
+</div>
+<div class="footer" id="size">
+  Size: 
+  <button onclick="size(20,30)" class="szBtn active">Small</button>
+  <button onclick="size(35,50)" class="szBtn">Medium</button>
+  <button onclick="size(50,70)" class="szBtn">Large</button>
+</div>
+<div class="footer" id="presets">
+  Presets:
+  <select id="selectBox" onchange="selectPreset()">
+    <option>None</option>
+    <option selected>Random</option>
+    <option>10 Cell Row</option>
+    <option>Exploder</option>
+    <option>Glider</option>
+    <option>Lightweight Spaceship</option>
+    <option>Tumbler</option>
+  </select>
+</div>
+<br />
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js'></script>
+
+    <script  src="js/index.js"></script>
+
+</body>
+</html>

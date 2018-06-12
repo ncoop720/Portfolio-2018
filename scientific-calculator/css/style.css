@@ -1,0 +1,98 @@
+body {
+  background: blue;
+}
+
+#calcBody {
+  background: black;
+  width: 370px;
+  padding: 8px 0 8px 8px;
+  margin: 30px auto 0 auto;
+}
+
+#helpBox {
+  font-family: 'Inconsolata', monospace;
+  background: lightgrey;
+  margin: 0 9px 0 0;
+  padding: 0 4px 0 4px;
+  font-size: 12px;
+  line-height: 11px;
+  word-wrap: break-word;
+}
+
+#answer {
+  display: block;
+}
+
+#textBox {
+  display: block;
+  color: black;
+  background: lightgrey;
+  margin: 0 9px 0 0;
+  padding: 0 4px 0 0;
+  text-align: right;
+  font-size: 24px;
+  font-family: 'Inconsolata', monospace;
+  word-wrap: break-word;
+}
+
+.calcRow {
+  margin: 5px 0;
+}
+
+.calcButton {
+  vertical-align: middle;
+  width: 55px;
+  height: 35px;
+  margin: 0;
+  font-family: 'Inconsolata', monospace;
+  background: LightGoldenRodYellow;
+  border-color: LightGoldenRodYellow;
+}
+
+.number {
+  background: powderblue;
+  border-color: powderblue;
+}
+
+.operator {
+  background: lightgreen;
+  border-color: lightgreen;
+}
+
+#rad {
+  font-size: 12px;
+  line-height: 14px;
+  background: orchid;
+  border-color: orchid;
+}
+
+#inv {
+  background: orchid;
+  border-color: orchid;
+}
+
+#decimal {
+  background: powderblue;
+  border-color: powderblue;
+}
+
+#clear {
+  line-height: 10px;
+  font-size: 18px;
+  background: indianred;
+  border-color: indianred;
+}
+
+#allClear {
+  font-size: 9px;
+}
+
+#inv {
+  font-size: 10px;
+  line-height: 14px;
+}
+
+#equal {
+  background: dodgerblue;
+  border-color: dodgerblue;
+}

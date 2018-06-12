@@ -2,12 +2,14 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Portfolio Site of Nathan Cooper</title>
 		<!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="game-of-life/css/style.css">
 	</head>
 	<body>
 
@@ -57,7 +59,7 @@
 				<div class="row">
 					<div class="col-md-2"></div>
 					<div class="col-md-8">
-						<h1 class="text-center">About me</h1>
+						<h1 class="text-center">About Me</h1>
 						<p>Graduated with a BS in Mathematics from the University of Kansas. I landed a banking job as a Credit Analyst shortly after finishing school, but after some time in the industry, I realized it wasn't for me. I wanted a career that served as a creative outlet, allowed me to use my problem-solving skills, and had elements of depth and mastery. A career in web/software development seemed like the perfect fit.</p>
 						<p>Starting out, I learned some HTML, CSS, Bootstrap, JavaScript, and jQuery from freecodecamp.com's front-end development course. It was a great resource and program to help me learn the basics before I attended Tech Talent South and completed their 8-week Code Immsersion bootcamp. At Tech Talent South, I learned about full-stack development with Ruby on Rails on the backend.</p>
 						<p>Now I am continuing to make/improve web apps in order to hone my skills as a developer while I search for my ticket into the industry.</p>
@@ -78,7 +80,7 @@
 						  <div class="card-body">
 						    <h5 class="card-title">Nutrition Tracker</h5>
 						    <p class="card-text">A food tracking app using the nutritionix API with Rails on the backend</p>
-						    <a href="#" class="btn btn-primary">View App</a>
+						    <a href="https://nc-nutritionix-app.herokuapp.com/" target="_blank" class="btn btn-primary">View App</a>
 						  </div>
 						</div>
 					</div>
@@ -89,7 +91,29 @@
 						  <div class="card-body">
 						    <h5 class="card-title">Scientific Calculator</h5>
 						    <p class="card-text">A JavaScript-based scientific calculator</p>
-						    <a href="#" class="btn btn-primary">View App</a>
+						    <!-- Button trigger modal -->
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#scientific-calculator">View App</button>
+								<!-- Modal -->
+								<div class="modal fade" id="scientific-calculator" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								  <div class="modal-dialog modal-lg" role="document">
+								    <div class="modal-content">
+								      <div class="modal-header">
+								        <h5 class="modal-title" id="exampleModalLabel">Scientific Calculator</h5>
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								          <span aria-hidden="true">&times;</span>
+								        </button>
+								      </div>
+								      <div class="modal-body">
+								      	<!-- Scientific Calculator App Start -->
+								        ...
+								        <!-- Scientific Calculator App End -->
+								      </div>
+								      <div class="modal-footer">
+								        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								      </div>
+								    </div>
+								  </div>
+								</div>
 						  </div>
 						</div>
 					</div>
@@ -98,9 +122,36 @@
 						<div class="card">
 						  <img class="card-img-top" src="images/gol_pic.png" alt="Card image cap">
 						  <div class="card-body">
-						    <h5 class="card-title">Game of Life</h5>
+						    <h5 class="card-title">Game of Life Simulation</h5>
 						    <p class="card-text">Not to be confused the the board game, this project displays mathematician John Conway's simulation with random, prebuilt, and create-your-own templates. The board states are rendered with React.js.</p>
-						    <a href="#" class="btn btn-primary">View App</a>
+						    <!-- Button trigger modal -->
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#game-of-life">View App</button>
+								<!-- Modal -->
+								<div class="modal fade" id="game-of-life" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								  <div class="modal-dialog modal-lg" role="document">
+								    <div class="modal-content">
+								      <div class="modal-header">
+								        <h5 class="modal-title" id="exampleModalLabel">Game of Life Simulation</h5>
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								          <span aria-hidden="true">&times;</span>
+								        </button>
+								      </div>
+								      <div class="modal-body">
+								      	<!-- Game of Life App Start -->
+												<div id='gameBoard'></div>
+												<br>
+												<div class="embed-responsive embed-responsive-16by9">
+												  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/E8kUJL04ELA" allowfullscreen></iframe>
+												</div>
+												
+												<!-- Game of Life App End -->
+								      </div>
+								      <div class="modal-footer">
+								        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								      </div>
+								    </div>
+								  </div>
+								</div>
 						  </div>
 						</div>
 					</div>
@@ -133,10 +184,13 @@
 		</section>
 
 		<!-- Javascript -->
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js'></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 		<!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+		<script src="game-of-life/js/index.js"></script>
     <script src="script.js"></script>
 	</body>
 </html>
