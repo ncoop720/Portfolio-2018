@@ -62,9 +62,30 @@ body {
 	margin: 10px 0;
 }
 
-.card-text {
-	height: 70px;
+@media (max-width: 575.98px) {
+	.card-text {
+  	height: 95px;
+  }
 }
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.card-text {
+  	height: 70px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.card-text {
+  	height: 95px;
+  }
+}
+
+@media (min-width: 992px) {
+	.card-text {
+  	height: 70px;
+  }
+}
+
 
 .card-img-top {
 	max-height: 250px;
@@ -118,7 +139,7 @@ body {
 }
 
 /* Font-Awesome Restyling */
-.fa-linkedin, .fa-github, .fa-envelope-square {
+.fa-linkedin, .fa-github, .fa-envelope-square, .fa-phone-square {
 	margin-bottom: 20px;
 	font-size: 200px;
 }
@@ -128,5 +149,10 @@ body {
 	font-size: 30px;
 	margin: 0;
 	padding: 0;
+	color: black;
+}
+
+.card-body .fa-github:hover {
+	color: red;
 }
 
