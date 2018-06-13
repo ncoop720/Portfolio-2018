@@ -86,6 +86,7 @@ body {
 }
 
 /* Bootstrap Restyling */
+
 .bg-light {
   background-color: white!important;
 }
@@ -120,5 +121,12 @@ body {
 .fa-linkedin, .fa-github, .fa-envelope-square {
 	margin-bottom: 20px;
 	font-size: 200px;
+}
+
+.card-body .fa-github {
+	vertical-align: middle;
+	font-size: 30px;
+	margin: 0;
+	padding: 0;
 }
 

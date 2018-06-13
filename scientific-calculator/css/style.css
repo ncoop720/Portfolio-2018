@@ -1,10 +1,6 @@
-body {
-  background: blue;
-}
-
 #calcBody {
   background: black;
-  width: 370px;
+  width: 268px;
   padding: 8px 0 8px 8px;
   margin: 30px auto 0 auto;
 }
@@ -41,12 +37,21 @@ body {
 
 .calcButton {
   vertical-align: middle;
-  width: 55px;
+  width: 60px;
   height: 35px;
   margin: 0;
   font-family: 'Inconsolata', monospace;
+  font-size: 10px;
   background: LightGoldenRodYellow;
   border-color: LightGoldenRodYellow;
+}
+
+.calcButton:active, #inv:active, #clear:active, #rad:active, #equal:active {
+  background-color: pink;
+}
+
+.calcButton:focus {
+  outline: 0;
 }
 
 .number {
@@ -60,7 +65,6 @@ body {
 }
 
 #rad {
-  font-size: 12px;
   line-height: 14px;
   background: orchid;
   border-color: orchid;
@@ -78,17 +82,16 @@ body {
 
 #clear {
   line-height: 10px;
-  font-size: 18px;
+  font-size: 12px;
   background: indianred;
   border-color: indianred;
 }
 
 #allClear {
-  font-size: 9px;
+  font-size: 8px;
 }
 
 #inv {
-  font-size: 10px;
   line-height: 14px;
 }
 

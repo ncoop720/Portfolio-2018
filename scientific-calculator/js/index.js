@@ -313,12 +313,12 @@ $("#equal").click(function() {
   closeAllPar(solve);
   
   // display added elements
-  if (neededPar || neededZero) {
+  // if (neededPar || neededZero) {
     neededPar = false;
     neededZero = false;
-  }
+  // }
   // display solution
-  else {
+  // else {
     if (!radian) {
       evalDeg(solve);
     }
@@ -341,7 +341,7 @@ $("#equal").click(function() {
       document.getElementById("textBox").innerHTML = ans;
     }
     document.getElementById("answer").innerHTML = "Ans = " + ans;
-  }
+  // }
 });
 
 // clear button on click
@@ -399,6 +399,14 @@ $(".operator").click(function() {
     solve.push("ans");
     solve.push(operator);
     display.push("ans");
+    display.push(operator);
+    document.getElementById("textBox").innerHTML = display.join("");
+  }
+  else if (operator=="-" && lastValue(solve)=="-") {
+    let arr = ["("]
+    pushToArr(solve, arr);
+    pushToArr(solve, "-");
+    display.push("(");
     display.push(operator);
     document.getElementById("textBox").innerHTML = display.join("");
   }
@@ -469,8 +477,6 @@ $("#inv").click(function() {
     $("#log").text("log");
     $("#sqRt").text("√");
     $("#exponent").text("xʸ");
-    $("#e").text("e");
-    $("#factorial").text("x!");
     inverse =  false;
   }
   else {
@@ -481,8 +487,6 @@ $("#inv").click(function() {
     $("#log").text("10ˣ");
     $("#sqRt").text("x²");
     $("#exponent").text("ʸ√x");
-    $("#e").text("ans");
-    $("#factorial").text("π");
     inverse = true;
   }
 });
@@ -734,72 +738,77 @@ $("#exponent").click(function() {
   document.getElementById("textBox").innerHTML = display.join("");
 });
 
-// factorial and pi button
+// factorial button
 $("#factorial").click(function() {
   if (lastValue(solve)==".") return;
-  let x;
-  // pi button
-  if (inverse) {
-    x = "Math.PI";
-    if (functionAddable()) {
-      pushToArr(solve, "*");
-      pushToArr(solve, x);
-      display.push("*");
-      display.push("π");
-    }
-    else {
-      pushToArr(solve, x);
-      display.push("π");
-    }
+
+  if (functionAddable()) {
+    createBase(solve, "factorial(", ")");
+    manageDisplay("!");
   }
-  // factorial button
-  else {
-    if (functionAddable()) {
-      createBase(solve, "factorial(", ")");
-      manageDisplay("!");
-    }
-    else if (solve.length==0) {
-      pushToArr(solve, "ans");
-      display.push("ans");
-      createBase(solve, "factorial(", ")");
-      manageDisplay("!");
-    }
+  else if (solve.length==0) {
+    pushToArr(solve, "ans");
+    display.push("ans");
+    createBase(solve, "factorial(", ")");
+    manageDisplay("!");
+  }
     
-  }
   document.getElementById("textBox").innerHTML = display.join("");
 });
 
-// e and ans button
-$("#e").click(function() {
+// pi button
+$("#pi").click(function() {
   if (lastValue(solve)==".") return;
-  let x;
-  // ans button
-  if (inverse) {
-    x = "ans";
-    if (functionAddable()) {
-      pushToArr(solve, "*");
-      pushToArr(solve, x);
-      display.push("*");
-      display.push("ans");
-    }
-    else {
-      pushToArr(solve, x);
-      display.push("ans");
-    }
+
+  if (functionAddable()) {
+    pushToArr(solve, "*");
+    pushToArr(solve, "Math.PI");
+    display.push("*");
+    display.push("π");
   }
-  //e button
   else {
-    x = "Math.E";
-    if (functionAddable()) {
-      pushToArr(solve, "*");
-      pushToArr(solve, x);
-      display.push("*");
-      display.push("e");
-    }
-    else {
-      pushToArr(solve, x);
-      display.push("e");
-    }
+    pushToArr(solve, "Math.PI");
+    display.push("π");
   }
+
   document.getElementById("textBox").innerHTML = display.join("");
 });
+
+// e button
+$("#e").click(function() {
+  if (lastValue(solve)==".") return;
+
+  if (functionAddable()) {
+    pushToArr(solve, "*");
+    pushToArr(solve, "Math.E");
+    display.push("*");
+    display.push("e");
+  }
+  else {
+    pushToArr(solve, "Math.E");
+    display.push("e");
+  }
+
+  document.getElementById("textBox").innerHTML = display.join("");
+});
+
+// ans button
+$("#ans").click(function() {
+  if (lastValue(solve)==".") return;
+
+  if (functionAddable()) {
+    pushToArr(solve, "*");
+    pushToArr(solve, "ans");
+    display.push("*");
+    display.push("ans");
+  }
+  else {
+    pushToArr(solve, "ans");
+    display.push("ans");
+  }
+
+  document.getElementById("textBox").innerHTML = display.join("");
+});
+
+
+

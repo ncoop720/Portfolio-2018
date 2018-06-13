@@ -6,10 +6,12 @@
 		<title>Portfolio Site of Nathan Cooper</title>
 		<!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" href="game-of-life/css/style.css">
+		<link rel="stylesheet" href="scientific-calculator/css/style.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 
@@ -76,21 +78,24 @@
 					<!-- Nutrition Tracking App -->
 					<div class="col-md-6 portfolio-item">
 						<div class="card">
-						  <img class="card-img-top" src="images/portfolio-background2.jpg" alt="Card image cap">
+						  <img class="card-img-top" src="images/nutrition-tracker.png" alt="Card image cap">
 						  <div class="card-body">
 						    <h5 class="card-title">Nutrition Tracker</h5>
 						    <p class="card-text">A food tracking app using the nutritionix API with Rails on the backend</p>
-						    <a href="https://nc-nutritionix-app.herokuapp.com/" target="_blank" class="btn btn-primary">View App</a>
+						    <div>
+						    	<a href="https://nc-nutritionix-app.herokuapp.com/" target="_blank" class="btn btn-primary">View App</a>
+						    	<a href="https://github.com/ncoop720/nutritionix_app" target="_blank"><i class="fab fa-github"></i></a>
+						    </div>
 						  </div>
 						</div>
 					</div>
 					<!-- Scientific Calculator -->
 					<div class="col-md-6 portfolio-item">
 						<div class="card">
-						  <img class="card-img-top" src="images/sc_pic.png" alt="Card image cap">
+						  <img class="card-img-top" src="images/scientific-calculator.png" alt="Card image cap">
 						  <div class="card-body">
 						    <h5 class="card-title">Scientific Calculator</h5>
-						    <p class="card-text">A JavaScript-based scientific calculator</p>
+						    <p class="card-text">A fully functioning JavaScript-based scientific calculator</p>
 						    <!-- Button trigger modal -->
 								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#scientific-calculator">View App</button>
 								<!-- Modal -->
@@ -105,7 +110,60 @@
 								      </div>
 								      <div class="modal-body">
 								      	<!-- Scientific Calculator App Start -->
-								        ...
+								        <div id="calcBody">
+											    <div id="helpBox">
+											      <div id="answer">Ans = 0</div>
+											    </div>
+											    <div id="textBox">0</div>
+											    <div class="calcRow">
+											    	<button class="calcButton" id="rad">Active: Rad</button>
+											    	<button class="calcButton" id="inv">Inverse</button>
+											    	<button class="calcButton" id="exponent">xʸ</button>
+											    	<button class="calcButton" id="sqRt">√</button>
+											    </div>
+											    <div class="calcRow">
+											    	<button class="calcButton" id="factorial">x!</button>
+											    	<button class="calcButton" id="e">e</button>
+											    	<button class="calcButton" id="ln">ln</button>
+     			 									<button class="calcButton" id="log">log</button>
+											    </div>
+											    <div class="calcRow">
+											    	<button class="calcButton" id="pi">π</button>
+											    	<button class="calcButton" id="sin">sin</button>
+											    	<button class="calcButton" id="cos">cos</button>
+											    	<button class="calcButton" id="tan">tan</button>
+											    </div>
+											    <div class="calcRow">
+											    	<button class="calcButton" id="ans">ans</button>
+											    	<button class="calcButton" id="leftPar">(</button>
+     			 									<button class="calcButton" id="rightPar">)</button>
+											    	<button class="calcButton" id="clear">C<br /><span id="allClear">Hold: AC</span></button>
+											    </div>
+											    <div class="calcRow">
+											    	<button class="calcButton number" id="button7">7</button>
+											      <button class="calcButton number" id="button8">8</button>
+											      <button class="calcButton number" id="button9">9</button>
+											      <button class="calcButton operator" id="multiply">x</button>
+											    </div>
+											    <div class="calcRow">
+											    	<button class="calcButton number" id="button4">4</button>
+											      <button class="calcButton number" id="button5">5</button>
+											      <button class="calcButton number" id="button6">6</button>
+											      <button class="calcButton operator" id="divide">÷</button>
+											    </div>
+											    <div class="calcRow">
+											    	<button class="calcButton number" id="button1">1</button>
+											      <button class="calcButton number" id="button2">2</button>
+											      <button class="calcButton number" id="button3">3</button>
+											      <button class="calcButton operator" id="plus">+</button>
+											    </div>
+											    <div class="calcRow">
+											    	<button class="calcButton number" id="button0">0</button>
+											      <button class="calcButton" id="decimal">.</button>
+											      <button class="calcButton" id="equal">=</button>
+											      <button class="calcButton operator" id="subtract">-</button>
+											    </div>
+											  </div>
 								        <!-- Scientific Calculator App End -->
 								      </div>
 								      <div class="modal-footer">
@@ -123,7 +181,7 @@
 						  <img class="card-img-top" src="images/game-of-life.png" alt="Card image cap">
 						  <div class="card-body">
 						    <h5 class="card-title">Game of Life Simulation</h5>
-						    <p class="card-text">Not to be confused the the board game, this project displays mathematician John Conway's simulation with random, prebuilt, and create-your-own templates. The board states are rendered with React.js.</p>
+						    <p class="card-text">Not to be confused the the board game, this project displays mathematician John Conway's simulation with random, prebuilt, and create-your-own templates.</p>
 						    <!-- Button trigger modal -->
 								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#game-of-life">View App</button>
 								<!-- Modal -->
@@ -175,7 +233,6 @@
 												<div class="embed-responsive embed-responsive-16by9">
 												  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/E8kUJL04ELA" allowfullscreen></iframe>
 												</div>
-												
 												<!-- Game of Life App End -->
 								      </div>
 								      <div class="modal-footer">
@@ -223,6 +280,7 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 		<!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
 		<script src="game-of-life/js/index.js"></script>
+		<script src="scientific-calculator/js/index.js"></script>
     <script src="script.js"></script>
 	</body>
 </html>
