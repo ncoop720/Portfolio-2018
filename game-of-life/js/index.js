@@ -17,51 +17,22 @@ var isRunning = false;
 var height;
 var width;
 
-if ($(window).width() < 400) {
-  height = 15;
-  width = 20;
-} else if ($(window).width() < 576 && $(window).width() >= 400) {
-  height = 20;
-  width = 30;
-} else if ($(window).width() < 768 && $(window).width() >= 576) {
-  height = 25;
-  width = 35;
-} else if ($(window).width() < 992 && $(window).width() >= 768) {
-  height = 30;
-  width = 40;
-} else if ($(window).width() < 1200 && $(window).width() >= 992) {
-  height = 35;
-  width = 50;
-} else {
-  height = 40;
-  width = 60;
-}
+changeBoardSize();
 
 $(document).ready(function () {
   start();
 
+  // change board dimensions based on bootstrap width
+  var prevHeight = height;
   $(window).resize(function () {
     stopSimulation();
-    if ($(this).width() < 400) {
-      height = 15;
-      width = 20;
-    } else if ($(this).width() < 576 && $(this).width() >= 400) {
-      height = 20;
-      width = 30;
-    } else if ($(this).width() < 768 && $(this).width() >= 576) {
-      height = 25;
-      width = 35;
-    } else if ($(this).width() < 992 && $(this).width() >= 768) {
-      height = 30;
-      width = 40;
-    } else if ($(this).width() < 1200 && $(this).width() >= 992) {
-      height = 35;
-      width = 50;
-    } else {
-      height = 40;
-      width = 60;
+    changeBoardSize();
+
+    //to prevent rendering board until new dimentions are reached
+    if (height !== prevHeight) {
+      prevHeight = height;
+      selectPreset();
     }
-    selectPreset();
   });
 
   //add or remove cells on click
@@ -95,6 +66,28 @@ $(document).ready(function () {
 function start() {
   generateRandomCells();
   generateBoard();
+}
+
+function changeBoardSize() {
+  if ($(window).width() < 400) {
+    height = 15;
+    width = 20;
+  } else if ($(window).width() < 576 && $(window).width() >= 400) {
+    height = 20;
+    width = 30;
+  } else if ($(window).width() < 768 && $(window).width() >= 576) {
+    height = 25;
+    width = 35;
+  } else if ($(window).width() < 992 && $(window).width() >= 768) {
+    height = 30;
+    width = 40;
+  } else if ($(window).width() < 1200 && $(window).width() >= 992) {
+    height = 35;
+    width = 50;
+  } else {
+    height = 40;
+    width = 60;
+  }
 }
 
 function generateBoard() {
